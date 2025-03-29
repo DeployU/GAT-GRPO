@@ -1,0 +1,57 @@
+# Network optimization hyperparameters configuration
+
+# Random seed for reproducibility
+seed: 42
+
+# Network topology settings
+topology:
+  type: 1  # 0: SMALL, 1: NSFNET, 2: GEANT2, 3: GBN
+  demand_values: [8, 32, 64]  # Possible bandwidth demand values
+
+# Graph Neural Network parameters
+model:
+  link_state_dim: 64       # Link state vector dimension
+  node_state_dim: 32       # Node state vector dimension
+  readout_units: 128       # Readout layer hidden units
+  message_passing_steps: 3 # Message passing iterations
+  attention_heads: 2       # Number of attention heads
+
+# Training parameters
+training:
+  learning_rate:
+  l2_reg: 
+  dropout_rate:  
+  gamma:   
+  num_demands:   
+  batch_size: 
+  group_size:   
+  clip_ratio: 
+  kl_coef: 
+  max_grad_norm: 
+  entropy_coef: 
+  min_kl: 
+  scale_factor: 
+  reward_scale:
+  iterations:
+  update_interval: 
+  eval_interval:  
+  early_stop_patience:
+
+# Joint optimization parameters
+joint_optimization:
+  task_reward_bonus:
+  load_penalty:
+
+# Evaluation parameters
+evaluation:
+  eval_episodes: 
+  eval_episodes_complex:
+  topo_eval_episodes:
+  evaluate_topologies:
+  visualize_training:
+  load_best_model:
+  
+# Output settings
+output:
+  save_dir: "./results/"  # Directory to save results
+  model_path: "./best_model.weights.h5"  # Path to save/load the best model
